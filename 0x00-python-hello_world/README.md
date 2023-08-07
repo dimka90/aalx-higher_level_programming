@@ -13,3 +13,5 @@ Write a Python script that prints exactly "Programming is like building a multil
 
 ##TASK 4
 Added a function that print float numbers using f-string"
+##TASK 5
+Added a python3 script that print string three times
