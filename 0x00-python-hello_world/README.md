@@ -17,3 +17,9 @@ Added a function that print float numbers using f-string"
 Added a python3 script that print string three times
 ##TASK 6
 A function  that concantenate strings
+##TASK 7
+Coded a code that concantenate string into one
+
+##TASK 8
+
+Using a single vairable to re-asign the value of a varible
