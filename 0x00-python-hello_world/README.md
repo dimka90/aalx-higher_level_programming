@@ -8,3 +8,8 @@ Note: *Pydostyle is use checking python complaince with pep 8*
 
 ##TASK 2
 Write a Python script that prints exactly "Programming is like building a multilingual puzzle, followed by a new line.
+##TASK 3
+
+
+##TASK 4
+Added a function that print float numbers using f-string"
