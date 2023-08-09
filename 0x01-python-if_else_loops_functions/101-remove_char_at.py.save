@@ -1,0 +1,17 @@
+#!/usr/bin/python3
+
+def remove_char_at(str, n):
+    new_str = ""
+    str_len = len(str)
+    if n < 0 or n > len:
+        return str
+
+    for counter in range(len):
+        if  counter == n:
+            continue
+        else:
+            new_str += str[len]
+    return new_str
+
+
+print(remove_char_at("James",2))
