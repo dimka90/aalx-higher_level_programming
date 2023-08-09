@@ -10,6 +10,6 @@ elif remainder == 0:
     print(f"Last digit of {number:d} is {remainder:d} and is 0")
 elif remainder < 6 and remainder != 0:
     print(f"Last digit of {number:d} is {remainder:d} and is less" +
-          "than 6 and not 0 ")
+          " than 6 and not 0")
 else:
     pass
