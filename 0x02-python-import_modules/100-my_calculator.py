@@ -1,36 +1,19 @@
 #!/usr/bin/python3
 
-def calculate():
-    import sys
-    import calculator_1
-
-    operators = ["+", "-", "*", "/"]
-    argv_len = len(sys.argv) - 1
-    operand = sys.argv[1:]
-    if argv_len < 3:
-        print("Usage: ./100-my_calculator.py <a> <operator> <b>")
-        exit(1)
-    if operand[1] in operators:
-        if operand[1] == "+":
-            sum = calculator_1.add(int(operand[0]), int(operand[2]))
-            print("{} + {} = {}".format(operand[0], operand[2], sum))
-            exit(0)
-        elif operand[1] == "-":
-            sub = calculator_1.sub(int(operand[0]), int(operand[2]))
-            print("{} - {} = {}".format(operand[0], operand[2], sub))
-            exit(0)
-        elif operand[1] == "*":
-            mul = calculator_1.mul(int(operand[0]), int(operand[2]))
-            print("{} * {} = {}".format(operand[0], operand[2], mul))
-            exit(0)
-        else:
-            div = calculator_1.div(int(operand[0]), int(operand[2]))
-            print("{} / {} = {}".format(operand[0], operand[2], div))
-            exit(0)
-    else:
-        print("nknown operator. Available operators: +, -, * and /")
-        exit(1)
-
-
 if __name__ == "__main__":
-    calculate()
+    """Handle basic arithmetic operations."""
+    from calculator_1 import add, sub, mul, div
+    import sys
+
+    if len(sys.argv) - 1 != 3:
+        print("Usage: ./100-my_calculator.py <a> <operator> <b>")
+        sys.exit(1)
+
+    ops = {"+": add, "-": sub, "*": mul, "/": div}
+    if sys.argv[2] not in list(ops.keys()):
+        print("Unknown operator. Available operators: +, -, * and /")
+        sys.exit(1)
+
+    a = int(sys.argv[1])
+    b = int(sys.argv[3])
+    print("{} {} {} = {}".format(a, sys.argv[2], b, ops[sys.argv[2]](a, b)))
