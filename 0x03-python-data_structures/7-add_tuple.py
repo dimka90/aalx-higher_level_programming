@@ -1,4 +1,4 @@
-#!/urs/bin/python3
+#!/usr/bin/python3
 def add_tuple(tuple_a=(), tuple_b=()) -> tuple:
     """This program takes in two tuples and add them together"""
     if len(tuple_a) < 2 or len(tuple_b) < 2:
