@@ -6,4 +6,4 @@ def print_sorted_dictionary(dictionary) -> None:
     sorted_items = sorted(dictionary.items(), key=custom_sort_key)
 
     for key, value in sorted_items:
-        print(key, ":", value)
+        print("{}: {}".format(key, value))
