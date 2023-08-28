@@ -4,8 +4,7 @@ def safe_print_integer(value) -> bool:
     Retunn: true on success and false on failure
     """
     try:
-        if isinstance(value, int):
-            print("{:d}".format(value))
-            return True
+        print("{:d}".format(value))
+        return True
     except ValueError:
         return False
