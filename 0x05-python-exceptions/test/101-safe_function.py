@@ -2,7 +2,7 @@
 import sys
 
 
-def safe_function(fct, *args) -> float or int or None:
+def safe_function(fct, *args) -> float, int or None:
     """
     a function that executes a function safely.
     This program takes in a function and try to
@@ -13,3 +13,5 @@ def safe_function(fct, *args) -> float or int or None:
         return result
     except Exception as e:
         print("Exception: {}".format(e), file=sys.stderr)
+  
+  
