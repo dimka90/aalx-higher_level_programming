@@ -14,17 +14,7 @@ class Square:
              size (int): a private attribute that keeps the size of the square
          Returns:
              None
-         """
-        self.__size = size
-
-    @size.setter
-    def size(self, size) -> None:
-        """
-        Args:
-             size (int): a private attribute that
-        Returns:
-                None
-        """
+         """"
         if not isinstance(size, int):
             raise TypeError("size must ne an interger")
         if size < 0:
