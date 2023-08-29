@@ -14,7 +14,7 @@ class Square:
              size (int): a private attribute that keeps the size of the square
          Returns:
              None
-         """"
+         """
         if not isinstance(size, int):
             raise TypeError("size must ne an interger")
         if size < 0:
