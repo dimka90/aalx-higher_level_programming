@@ -25,7 +25,7 @@ class Square:
         Returns:
                 None
         """
-        if is not instance(size, int):
+        if not isinstance(size, int):
             raise TypeError("size must ne an interger")
         if size < 0:
             raise ValueError("size must be >= 0")
