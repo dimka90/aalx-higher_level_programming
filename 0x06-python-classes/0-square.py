@@ -4,7 +4,7 @@ A square class
 """
 
 
-def Square() -> None:
+class Square:
     """
     An empty sqaure class
     """
