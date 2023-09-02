@@ -1,6 +1,6 @@
 # 0x07. Python - Test-driven development
 
-![Python Logo](./images/python-logo.png = 200x)
+![Python Logo](./images/python-logo.png =200x)
 
 Welcome to the "0x07. Python - Test-driven development" project. This project is a part of the Holberton School curriculum and focuses on learning test-driven development (TDD) in Python.
 
