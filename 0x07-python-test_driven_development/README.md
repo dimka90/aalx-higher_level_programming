@@ -16,7 +16,7 @@ Welcome to the "0x07. Python - Test-driven development" project. This project is
 
 Test-driven development (TDD) is a software development process that emphasizes writing tests before writing the actual code. This project is designed to help you understand and practice TDD principles in Python.
 
-![TDD](../images/tdd.png)
+<img src="./images/tdd.png" alt="Test driven development logo" width="100px">
 
 ## Getting Started
 
@@ -39,7 +39,7 @@ Before you begin, ensure you have the following requirements:
 
    ```bash
     cd alx-higher_level_progrmaing/0x07-python-test_driven_development
-3. Usage
+### Usage
 This project includes various exercises and tasks related to TDD in Python. Each task has its own directory with test files and Python modules. You can navigate to each task's directory and run the tests to practice TDD.
 
 For example, to run the tests for the "0-add_integer" task:
@@ -54,8 +54,8 @@ Contributions to this project are welcome! If you would like to contribute:
 4. Push to the branch: git push origin feature/your-feature
 5. Submit a pull request.
 Please follow our code of conduct and coding standards.
-Acknowledgments
+### Acknowledgments
 Special thanks to Holberton School for providing this learning opportunity.
 Inspired by the principles of test-driven development.
-Contact
+### Contact
 Email: dimka90@gmail.com
