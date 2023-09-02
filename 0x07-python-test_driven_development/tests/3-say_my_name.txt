@@ -1,0 +1,22 @@
+#Doctest for say_my_name() function
+>>> say_my_name = __import__('3-say_my_name').say_my_name
+>>> say_my_name("Dimka", "Yilrit")
+My name is Dimka Yilrit
+>>> say_my_name("Dimka")
+My name is Dimka 
+>>> say_my_name("","Dimka")
+Traceback (most recent call last):
+...
+ValueError: first_name can not be empty
+>>> say_my_name(123,"Dimka")
+Traceback (most recent call last):
+...
+TypeError: first_name must be a string
+>>> say_my_name("Dimka",123)
+Traceback (most recent call last):
+...
+TypeError: last_name must be a string
+>>> say_my_name(["Dimka","James"],"Joy")
+Traceback (most recent call last):
+...
+TypeError: first_name must be a string
