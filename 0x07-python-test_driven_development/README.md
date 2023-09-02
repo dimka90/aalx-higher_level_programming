@@ -12,7 +12,7 @@ Welcome to the "0x07. Python - Test-driven development" project. This project is
 - [Contributing](#contributing)
 - [License](#license)
 
-## About
+### About
 
 Test-driven development (TDD) is a software development process that emphasizes writing tests before writing the actual code. This project is designed to help you understand and practice TDD principles in Python.
 
