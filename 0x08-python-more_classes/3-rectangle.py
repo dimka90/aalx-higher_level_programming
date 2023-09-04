@@ -62,12 +62,12 @@ class Rectangle:
     def __str__(self) -> str:
         """print the string representation of the"""
         if self.__width == 0 or self.__height == 0:
-            return ("")
+            return (" ")
         rectangle = []
         # creatinf the rectangle by looping
         for row in range(0, self.__height):
             for column in range(0, self.__width):
                 rectangle.append('#')
-            if row != self.__height - 1:
-                rectangle.append("\n")
+            if self.__width != 0 and (row < self.__height - 1):
+                rectangle.append('\n')
         return ("".join(rectangle))
