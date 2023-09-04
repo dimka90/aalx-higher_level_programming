@@ -6,7 +6,7 @@ This is a class Rectangle
 
 class Rectangle:
     """ Class Rectangle"""
-    def __init__ (self, width = 0, height = 0) ->None:
+    def __init__(self, width=0, height=0) -> None:
         """
         Args:
              width(int): a private attribute that stores the width
@@ -15,13 +15,14 @@ class Rectangle:
               None
         """
         self.__width = width
+        self.__height = height
 
         @property
         def width(self):
             """
             This function returns the width of the rectangle
             Args:
-                 self(obeject): instance of the new class 
+                 self(obeject): instance of the new class
             """
             return self.__width
 
@@ -30,7 +31,7 @@ class Rectangle:
             """
               This function returns the width of the rectangle
               Args:
-                   self(obeject): instance of the new class 
+                   self(obeject): instance of the new class
                    value(int) : width of the rectangle
              """
 
@@ -41,3 +42,27 @@ class Rectangle:
 
             self.__width = value
 
+        @property
+        def height(self):
+            """
+            This function returns the width of the rectangle
+            Args:
+                 self(obeject): instance of the new class
+            """
+            return self.__height
+
+        @height.setter
+        def height(self, value):
+            """
+              This function returns the width of the rectangle
+              Args:
+                   self(obeject): instance of the new class
+                   value(int) : height of the rectangle
+             """
+
+            if not isinstance(value, int):
+                raise TypeError("height must be an integer")
+            if value < 0:
+                raise TypeError("height must be >= 0")
+
+            self.__height = value
