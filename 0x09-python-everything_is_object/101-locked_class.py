@@ -3,4 +3,7 @@
 
 
 class LockedClass:
-    __slots__ = ('firstname')
+    """
+    Only the creation of obejct only if the attribute is firstname
+    """
+    __slots__ = ('firstname',)
