@@ -6,7 +6,7 @@ class LockedClass:
     """
     Only the creation of obejct only if the attribute is firstname
     """
-    __slots__ = ['firstname']
+    __slots__ = ('first_name',)
 
     def __init__(self):
         """
@@ -14,4 +14,4 @@ class LockedClass:
            Args:
               self(object) : instance of the newly created object
         """
-        self.firstname = 'firstname'
+        self.first_name = 'first_name'
