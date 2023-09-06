@@ -11,18 +11,18 @@ def matrix_divided(matrix, div):
     A function that returns the element after divsion
     """
     # checking it is a matrix
+    message = "matrix must be a matrix (list of lists) of integers/floats"
     if not isinstance(matrix, list):
-        raise TypeError("matrix must be a matrix (list of lists) of integers/floats")
+        raise TypeError(message)
     for row in matrix:
-        #checking for the type of each element in the  matrix 
-        if not isinstance(row,list):
-            raise TypeError("matrix must be a matrix (list of lists) of integers/floats")
+        # checking for the type of each element in the  matrix
+        if not isinstance(row, list):
+            raise TypeError(message)
         for column in row:
             # checking the type of each element in the list(row)
             if not isinstance(column, (int, float)):
-                raise TypeError("matrix must be a matrix (list of lists) of integers/floats")
+                raise TypeError(message)
     list_len = len(matrix[0])
-
     for row in matrix:
         # checking the length of the indiviual list element
         if len(row) != list_len:
@@ -31,8 +31,8 @@ def matrix_divided(matrix, div):
         raise TypeError("div must be a number")
     if div == 0:
         raise ZeroDivisionError("division by zero")
-    #looping for and dividing each element of the list by 3
+    # looping for and dividing each element of the list by 3
     # using list comprehension
-    new_list =[[float(round(element/3,2)) for element in row ] for row in matrix]
-
+    num = [float(round(element / 3, 2)) for element in row]
+    new_list = [num for row in matrix]
     return new_list
