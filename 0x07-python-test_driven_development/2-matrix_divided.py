@@ -3,6 +3,8 @@
 A function that each and every element of a 2d list(matrix)
 >>> matrix_divided([[1, 2, 3],[4, 5, 6]], 3)
 [[0.33, 0.67, 1.0], [1.33, 1.67, 2.0]]
+>>> matrix_divided( [[3, 9], [12, 15]], -3)
+[[-1.0, -3.0], [-4.0, -5.0]]
 """
 
 
@@ -34,5 +36,14 @@ def matrix_divided(matrix, div):
     # looping for and dividing each element of the list by 3
     # using list comprehension
     # num = [float(round(element / 3, 2)) for element in row]
-    new_list = [[float(round(element /3, 2)) for element in row ] for row in matrix]
+    if div < 0:
+        new_list = [
+                   [float(round(element / -3, 2)) for element in row] 
+                   for row in matrix
+        ]
+    else:
+        new_list = [
+                [float(round(element / 3, 2)) for element in row] 
+                for row in matrix
+        ]
     return new_list
