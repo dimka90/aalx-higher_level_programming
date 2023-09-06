@@ -33,6 +33,6 @@ def matrix_divided(matrix, div):
         raise ZeroDivisionError("division by zero")
     # looping for and dividing each element of the list by 3
     # using list comprehension
-    num = [float(round(element / 3, 2)) for element in row]
-    new_list = [num for row in matrix]
+    # num = [float(round(element / 3, 2)) for element in row]
+    new_list = [[float(round(element /3, 2)) for element in row ] for row in matrix]
     return new_list
