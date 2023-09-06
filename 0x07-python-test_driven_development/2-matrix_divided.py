@@ -38,12 +38,12 @@ def matrix_divided(matrix, div):
     # num = [float(round(element / 3, 2)) for element in row]
     if div < 0:
         new_list = [
-                   [float(round(element / -3, 2)) for element in row] 
-                   for row in matrix
+            [float(round(element / -3, 2)) for element in row]
+            for row in matrix
         ]
     else:
         new_list = [
-                [float(round(element / 3, 2)) for element in row] 
-                for row in matrix
+            [float(round(element / 3, 2)) for element in row]
+            for row in matrix
         ]
     return new_list
