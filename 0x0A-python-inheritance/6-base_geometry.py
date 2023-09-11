@@ -4,7 +4,6 @@
 
 class BaseGeometry:
     """ A class for all shape"""
-    
     def area(self):
         """
         Area is not yet implemented
