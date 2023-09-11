@@ -4,10 +4,9 @@
 
 class BaseGeometry:
     """ A class for all shape"""
-    pass
-
+    
     def area(self):
         """
         Area is not yet implemented
         """
-        raise Exception("200~area() is not implemented")
+        raise Exception("area() is not implemented")
