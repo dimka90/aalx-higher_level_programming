@@ -1,1 +1,2 @@
 Inheritance in python
+'''
