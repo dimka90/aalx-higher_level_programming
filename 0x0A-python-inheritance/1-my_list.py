@@ -13,4 +13,11 @@ class MyList(list):
         A function that sort a list in ascending order
         """
         sorted_list = sorted(self)
-        print(sorted_list)
+        flag = 0
+        print("[", end="")
+        for item in sorted_list:
+            if flag == 1:
+                print(", ", end="")
+            flag = 1
+            print(item, end="")
+        print("]")
