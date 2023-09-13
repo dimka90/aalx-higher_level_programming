@@ -1,3 +1,4 @@
+#!/usr/bin/python3
 import sys
 import signal
 from collections import defaultdict
@@ -10,6 +11,7 @@ total_file_size = 0
 status_code_counts = defaultdict(int)
 line_count = 0
 
+
 # Function to print the statistics
 def print_statistics(signal, frame):
     print(f"Total file size: {total_file_size}")
@@ -17,6 +19,7 @@ def print_statistics(signal, frame):
         if status_code_counts[status_code] > 0:
             print(f"{status_code}: {status_code_counts[status_code]}")
     sys.exit(0)
+
 
 # Register the signal handler for CTRL+C
 signal.signal(signal.SIGINT, print_statistics)
@@ -39,4 +42,3 @@ for line in sys.stdin:
                 print_statistics(None, None)
     except ValueError:
         pass  # Ignore lines with incorrect format
-
