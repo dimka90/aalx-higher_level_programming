@@ -33,7 +33,7 @@ class Rectangle(Base):
         """
         returns the width of the rectangle
         """
-        return self._width
+        return self.__width
 
     @width.setter
     def width(self, value):
@@ -44,14 +44,14 @@ class Rectangle(Base):
             raise TypeError("width must be an integer")
         if value <= 0:
             raise ValueError("width must be > 0")
-        self._width = value
+        self.__width = value
 
     @property
     def height(self):
         """
         returns the height of the rectangle
         """
-        return self._height
+        return self.__height
 
     @height.setter
     def height(self, value):
@@ -62,14 +62,14 @@ class Rectangle(Base):
             raise TypeError("height must be an integer")
         if value <= 0:
             raise ValueError("height must be > 0")
-        self._height = value
+        self.__height = value
 
     @property
     def x(self):
         """
         returns the width of the rectangle
         """
-        return self._x
+        return self.__x
 
     @x.setter
     def x(self, x):
@@ -81,14 +81,14 @@ class Rectangle(Base):
         if x:
             if x < 0:
                 raise ValueError("x must be >= 0")
-        self._x = x
+        self.__x = x
 
     @property
     def y(self):
         """
         returns the y of the rectangle
         """
-        return self._y
+        return self.__y
 
     @y.setter
     def y(self, y):
@@ -100,4 +100,18 @@ class Rectangle(Base):
         if y:
             if y < 0:
                 raise ValueError("y must be >= 0")
-        self._y = y
+        self.__y = y
+
+    def area(self):
+        """
+        A function that calcluate the area of a rectangle
+        formular
+               Area = height(length) * width
+        args:
+            self(object): Instance of a Rectangle Class
+        Return:
+              Area of the Rectangle
+        """
+        area = self.height * self.width
+
+        return area
