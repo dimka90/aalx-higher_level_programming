@@ -22,64 +22,82 @@ class Rectangle(Base):
         Return:
                None
         """
-        self.__width = width
-        self.__height = height
-        self.__x = x
-        self.__y = y
         super().__init__(id)
+        self.width = width
+        self.height = height
+        self.x = x
+        self.y = y
 
     @property
     def width(self):
         """
         returns the width of the rectangle
         """
-        return self.__width
+        return self._width
 
     @width.setter
-    def width(self, width):
+    def width(self, value):
         """
         set the width property of the rectangle
         """
-        self.__width = width
+        if not isinstance(value, int):
+            raise TypeError("width must be an integer")
+        if value <= 0:
+            raise ValueError("width must be > 0")
+        self._width = value
 
     @property
     def height(self):
         """
         returns the height of the rectangle
         """
-        return self.__height
+        return self._height
 
     @height.setter
-    def height(self, height):
+    def height(self, value):
         """
          set the height property of the rectangle
         """
-        self.__height = height
+        if not isinstance(value, int):
+            raise TypeError("height must be an integer")
+        if value <= 0:
+            raise ValueError("height must be > 0")
+        self._height = value
 
     @property
     def x(self):
         """
         returns the width of the rectangle
         """
-        return self.__x
+        return self._x
 
     @x.setter
     def x(self, x):
         """
          set the x property of the rectangle
         """
-        self.__x = x
+        if not isinstance(x, int):
+            raise TypeError("x must be an integer")
+        if x:
+            if x < 0:
+                raise ValueError("x must be >= 0")
+        self._x = x
 
     @property
     def y(self):
         """
         returns the y of the rectangle
         """
-        return self.__y
+        return self._y
 
     @y.setter
-    def height(self, y):
+    def y(self, y):
         """
          set the y property of the rectangle
         """
-        self.__y = y
+        if not isinstance(y, int):
+            raise TypeError("y must be an integer")
+        if y:
+            if y < 0:
+                raise ValueError("y must be >= 0")
+        self._y = y
