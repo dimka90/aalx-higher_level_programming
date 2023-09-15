@@ -115,3 +115,12 @@ class Rectangle(Base):
         area = self.height * self.width
 
         return area
+
+    def display(self):
+        """
+        A function that display a grid of rectangle with the # pound
+        """
+        for row in range(self.height):
+            for column in range(self.width):
+                print("#", end="")
+            print()
