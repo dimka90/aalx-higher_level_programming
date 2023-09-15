@@ -124,3 +124,10 @@ class Rectangle(Base):
             for column in range(self.width):
                 print("#", end="")
             print()
+
+    def __str__(self):
+        """
+        Returns a string representation of the function
+        """
+        return "[{}] ({}) {}/{} - {}/{}".format(
+                "Rectangle", self.id, self.x, self.y, self.width, self.height)
