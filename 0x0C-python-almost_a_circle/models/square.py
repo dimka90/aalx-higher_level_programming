@@ -30,4 +30,22 @@ class Square(Rectangle):
         A function that overide it parent string representation
         """
         return "{} ({:d}) {:d}/{:d} - {}".format(
+
                 "Square", self.id, self.x, self.y, self.width)
+
+    @property
+    def size(self) -> int:
+        """
+        Returns the value of size
+        size is an alias for both height and width
+        """
+        return self.width
+
+    @size.setter
+    def size(self, value):
+        """
+        Validate the value of size before assignment
+        size is an alias for width, so it is same thing as
+        validating the width of thesquare
+        """
+        self.width = value
