@@ -84,3 +84,20 @@ class Square(Rectangle):
                     self.x = item
                 elif index == 3:
                     self.y = item
+
+    def to_dictionary(self) -> dict:
+        """
+        A dictionary representation of the Square class
+
+        return: 
+              a dictionary representation of the attribute of an object
+        """
+
+        self_dict = dict()
+        self_dict['id'] = self.id
+        self_dict['size'] = self.size
+        self_dict['x'] = self.x
+        self_dict['y'] = self.y
+
+        return self_dict
+
