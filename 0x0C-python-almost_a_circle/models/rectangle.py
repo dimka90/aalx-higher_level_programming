@@ -132,14 +132,32 @@ class Rectangle(Base):
         return "[{}] ({}) {}/{} - {}/{}".format(
                 "Rectangle", self.id, self.x, self.y, self.width, self.height)
 
-    def update(self, *args):
+    def update(self, *args, **kwargs):
         """
         A function that update the values of the instance vairable of a class
         args:
             *args(no positional argument): receive any length of variable
         """
         if len(args) == 0:
-            raise ValueError("An empty call to update function")
+            if len(kwargs) == 0 or len(kwargs) > 5:
+                raise TypeError("Upadate size value must be between 1 and 5")
+
+            for key, value in kwargs.items():
+                if key == 'id':
+                    self.id = value
+                elif key == 'width':
+                    self.width = value
+                elif key == 'height':
+                    self.height = value
+                elif key == 'x':
+                    self.x = value
+                elif key == 'y':
+                    self.y = value
+                else:
+                    raise ValueError("Key not in dictionary")
+
+        if len(args) > 5:
+            raise TypeError("An args len should be between 1 and 5")
 
         for index, item in enumerate(args):
             if index == 0:
