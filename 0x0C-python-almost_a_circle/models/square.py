@@ -89,7 +89,7 @@ class Square(Rectangle):
         """
         A dictionary representation of the Square class
 
-        return: 
+        return:
               a dictionary representation of the attribute of an object
         """
 
@@ -100,4 +100,3 @@ class Square(Rectangle):
         self_dict['y'] = self.y
 
         return self_dict
-
