@@ -131,3 +131,25 @@ class Rectangle(Base):
         """
         return "[{}] ({}) {}/{} - {}/{}".format(
                 "Rectangle", self.id, self.x, self.y, self.width, self.height)
+
+    def update(self, *args):
+        """
+        A function that update the values of the instance vairable of a class
+        args:
+            *args(no positional argument): receive any length of variable
+        """
+        if len(args) == 0:
+            raise ValueError("An empty call to update function")
+
+        for index, item in enumerate(args):
+            if index == 0:
+                if self.id != item:
+                    self. id = item
+            elif index == 1:
+                self.width = item
+            elif index == 2:
+                self.height = item
+            elif index == 3:
+                self. x = item
+            elif index == 4:
+                self.y = item
