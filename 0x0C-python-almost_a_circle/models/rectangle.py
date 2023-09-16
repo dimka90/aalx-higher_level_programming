@@ -171,3 +171,24 @@ class Rectangle(Base):
                 self. x = item
             elif index == 4:
                 self.y = item
+
+    def to_dictionary(self):
+        """Creates dictionary representation of self without revealing private
+        attribute names, as would __dict__.
+
+        Returns:
+            self_dict (dict): custom dictionary of private attribute values
+                populated using getters
+
+        Project tasks:
+            13. Rectangle instance to dictionary representation
+
+        """
+        self_dict = dict()
+
+        self_dict['id'] = self.id
+        self_dict['width'] = self.width
+        self_dict['height'] = self.height
+        self_dict['x'] = self.x
+        self_dict['y'] = self.y
+        return self_dict
