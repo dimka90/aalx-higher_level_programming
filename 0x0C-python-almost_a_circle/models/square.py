@@ -49,3 +49,38 @@ class Square(Rectangle):
         validating the width of thesquare
         """
         self.width = value
+
+    def update(self, *args, **kwargs):
+        """
+        A function that update the values of an instancewq
+        of the Square class
+        """
+
+        if len(args) == 0:
+            if len(kwargs) == 0 or len(kwargs) > 4:
+                raise TypeError("Len of dictionary is between 1 and 4")
+
+            else:
+                for key, value in kwargs.items():
+                    if key == 'id':
+                        self.id = value
+                    elif key == 'size':
+                        self.size = value
+                    elif key == 'x':
+                        self.x = value
+                    elif key == 'y':
+                        self.y = value
+                    else:
+                        raise TypeError("Invalid key provided")
+        elif len(args) > 4:
+            raise TypeError("len of positonal argument is 1 to 4")
+        else:
+            for index, item in enumerate(args):
+                if index == 0:
+                    self.id = item
+                elif index == 1:
+                    self.size = item
+                elif index == 2:
+                    self.x = item
+                elif index == 3:
+                    self.y = item
