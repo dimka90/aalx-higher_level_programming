@@ -156,21 +156,22 @@ class Rectangle(Base):
                 else:
                     raise ValueError("Key not in dictionary")
 
-        if len(args) > 5:
+        elif len(args) > 5:
             raise TypeError("An args len should be between 1 and 5")
 
-        for index, item in enumerate(args):
-            if index == 0:
-                if self.id != item:
-                    self. id = item
-            elif index == 1:
-                self.width = item
-            elif index == 2:
-                self.height = item
-            elif index == 3:
-                self. x = item
-            elif index == 4:
-                self.y = item
+        else:
+            for index, item in enumerate(args):
+                if index == 0:
+                    if self.id != item:
+                        self. id = item
+                elif index == 1:
+                    self.width = item
+                elif index == 2:
+                    self.height = item
+                elif index == 3:
+                    self. x = item
+                elif index == 4:
+                    self.y = item
 
     def to_dictionary(self):
         """Creates dictionary representation of self without revealing private

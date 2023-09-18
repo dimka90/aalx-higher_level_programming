@@ -70,3 +70,107 @@ class Base:
             return []
 
         return json.loads(json_string)
+
+    @classmethod
+    def create(cls, **dictionary):
+        """
+        A function that takes in a  dictionary and modify the attribute
+        of the temp_object the values from the dictionary
+        class to update the values of the temporal object
+        args:
+            **dictionary(dict): a dictionary with key and values
+        """
+        # Checking to see if the name of the object belongs to the rectangle
+        # class
+        if cls.__name__ == 'Rectangle':
+            # Creating a temporal variable with arbitary values
+            temp_obj = cls(1, 2, 3)
+        if cls.__name__ == 'Square':
+            temp_obj = cls(5, 5)
+            # calling the update function on the temp_obj to update it values
+        temp_obj.update(**dictionary)
+        return temp_obj
+
+    @classmethod
+    def load_from_file(cls):
+        """
+        A function that loads object instance from a file and convert
+        it to python object
+        """
+        import os.path
+
+        filename = cls.__name__ + '.json'
+        if os.path.exists(filename):
+            with open(filename, 'r', encoding="utf-8") as file:
+                json_data = file.read()
+        else:
+            return []
+        obj_list = cls.from_json_string(json_data)
+        instance_list = []
+        for item in obj_list:
+            instance_list.append(cls.create(**item))
+        return instance_list
+
+    @classmethod
+    def save_to_file_csv(cls, list_objs):
+        """Saves to file a CSV formatted string of a list of dictionary
+        representations of objects of `Base` derived classes.
+
+        Args:
+            list_objs (list) of (dict): list of `Base` derived objects (in
+                this project `Rectangle` and `Square`)
+
+        Project tasks:
+            20. JSON ok, but CSV? - class method `save_from_file_csv()`
+                returns list of instances from file <Class name>.csv, or empty
+                list if no file. must use `from_json_string()` and `create()`,
+                class of instances in list depends on cls
+
+        """
+        if list_objs is None:
+            list_objs = []
+
+        if cls.__name__ == 'Rectangle':
+            keys = ('id', 'width', 'height', 'x', 'y')
+        elif cls.__name__ == 'Square':
+            keys = ('id', 'size', 'x', 'y')
+
+        list_dicts = []
+        for item in list_objs:
+            list_dicts.append(item.to_dictionary())
+
+    @classmethod
+    def load_from_file_csv(cls):
+        """Returns list of instances from file <class name>.csv, or empty list
+        if no file. `cls` determines class of instances.
+
+        Returns:
+            list of instances of `cls` from file <class name>.csv, or empty
+                list if no file
+
+        Project tasks:
+            20. JSON ok, but CSV? - class method `load_from_file_csv()`
+                returns list of instances from file <Class name>.csv, or empty
+                list if no file. must use `from_json_string()` and `create()`,
+                class of instances in list depends on cls
+
+        """
+        import os.path
+
+        if cls.__name__ == 'Rectangle':
+            keys = ('id', 'width', 'height', 'x', 'y')
+        elif cls.__name__ == 'Square':
+            keys = ('id', 'size', 'x', 'y')
+
+        filename = cls.__name__ + '.csv'
+        if os.path.exists(filename):
+            with open(filename, 'r', encoding='utf-8') as file:
+                csv_reader = csv.DictReader(file)
+                instance_list = []
+                for row in csv_reader:
+                    for key in keys:
+                        row[key] = int(row[key])
+                    instance_list.append(cls.create(**row))
+                return instance_list
+        else:
+            return []

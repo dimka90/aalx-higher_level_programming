@@ -52,13 +52,13 @@ class Square(Rectangle):
 
     def update(self, *args, **kwargs):
         """
-        A function that update the values of an instancewq
+        A function that update the values of an instance
         of the Square class
         """
 
         if len(args) == 0:
             if len(kwargs) == 0 or len(kwargs) > 4:
-                raise TypeError("Len of dictionary is between 1 and 4")
+                raise TypeError("Len of dictionary or agrs is between 1 and 4")
 
             else:
                 for key, value in kwargs.items():
