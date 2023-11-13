@@ -4,8 +4,6 @@ const args = process.argv;
 // checking  for the of the comand line arguments
 if (args.length < 3) {
   console.log('No argument');
-} else if (args.length === 3) {
-  console.log('Argument found');
-} else {
-  console.log('Arguments found');
+} else if (args.length > 2) {
+  console.log(args[2]);
 }
