@@ -9,7 +9,7 @@ if (isNaN(parsedInt)) {
 } else {
   for (let i = 1; i <= args[2]; i++) {
     for (let j = 1; j <= args[2]; j++) {
-      process.stdout.write('x');
+      process.stdout.write('X');
     }
     console.log();
   }
