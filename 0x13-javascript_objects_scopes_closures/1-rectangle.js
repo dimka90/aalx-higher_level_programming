@@ -1,7 +1,5 @@
 #!/usr/bin/node
-/*
-Defining a an empty class
-*/
+// a class with a constructor and some attribute
 class Rectangle {
   constructor (w, h) {
     this.width = w;
