@@ -2,19 +2,21 @@
 
 """
 Module: database_operations
-Description: This module provides functions for interacting with a MySQL database.
+Description:This module provide functions for interacting with a MySQL database
 """
 
 import MySQLdb
 import sys
 
+
 def fetchdata():
     """
     Function: fetchdata
-    Description: Fetches and prints all data from the 'states' table in the specified MySQL database.
-    
+    Description: Fetches and prints all data from the 'states' table in
+                 the specified MySQL database.
     Usage:
-    - Requires three command-line arguments: MySQL username, password, and database name.
+    - Requires three command-line arguments: MySQL username, password,
+      and database name.
     - The function connects to the MySQL server on localhost at port 3306.
     - It executes a SELECT query to retrieve all data from the 'states' table.
     - The fetched results are printed to the console.
@@ -25,7 +27,8 @@ def fetchdata():
     ```
 
     Args:
-    - No arguments are passed directly to the function; it retrieves arguments from sys.argv.
+    - No arguments are passed directly to the function;
+      it retrieves arguments from sys.argv.
 
     Returns:
     - None
@@ -34,7 +37,8 @@ def fetchdata():
     - None
     """
     # Connect to MySQL server
-    db = MySQLdb.connect(user=sys.argv[1], passwd=sys.argv[2], db=sys.argv[3], port=3306)
+    db = MySQLdb.connect(user=sys.argv[1], passwd=sys.argv[2],
+                         db=sys.argv[3], port=3306)
 
     # Create a cursor
     cursor = db.cursor()
@@ -49,6 +53,7 @@ def fetchdata():
 
     # Close the database connection
     db.close()
+
 
 if __name__ == "__main__":
     # Execute the fetchdata function when the script is run
