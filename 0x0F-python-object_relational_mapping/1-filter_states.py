@@ -45,8 +45,8 @@ def fetchdata():
 
     # Create a query that selects states
     # that start only with capital letter name
-    cursor.execute("""SELECT * FROM states WHERE UPPER(name)
-                   LIKE BINARY 'N%' ORDER BY states.id """)
+    cursor.execute("""SELECT * FROM states WHERE name
+                   LIKE BINARY 'N%' ORDER BY states.id""")
 
     # Fetch and print result
     results = cursor.fetchall()
