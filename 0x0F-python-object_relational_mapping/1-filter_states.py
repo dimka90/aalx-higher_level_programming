@@ -44,7 +44,8 @@ def fetchdata():
     cursor = db.cursor()
 
     # Create a query
-    cursor.execute("SELECT * FROM states WHERE UPPER(name) LIKE  'N%'")
+    cursor.execute("SELECT * FROM states WHERE UPPER(name)"
+                   "LIKE  'N%' ORDER BY states.id ")
 
     # Fetch and print result
     results = cursor.fetchall()
