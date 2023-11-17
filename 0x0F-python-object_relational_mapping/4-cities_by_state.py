@@ -45,7 +45,8 @@ def fetchdata():
 
     # Create a query that selects states
     # that start only with capital letter name
-    cursor.execute("SELECT * FROM cities")
+    cursor.execute("""SELECT cities.id, cities.name, states.name FROM
+                   cities INNER JOIN states ON states.id=cities.state_id""")
 
     # Fetch and print result
     results = cursor.fetchall()
