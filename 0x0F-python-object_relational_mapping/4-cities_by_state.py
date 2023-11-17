@@ -45,7 +45,7 @@ def fetchdata():
 
     # Create a query that selects states
     # that start only with capital letter name
-    cursor.execute("""SELECT * FROM cities ORDER BY cities.id""")
+    cursor.execute("SELECT * FROM cities")
 
     # Fetch and print result
     results = cursor.fetchall()
