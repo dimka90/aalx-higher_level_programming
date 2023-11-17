@@ -53,6 +53,8 @@ def fetchdata():
     for row in results:
         print(row)
 
+    # closing the cursor
+    cursor.close()
     # Close the database connection
     db.close()
 
