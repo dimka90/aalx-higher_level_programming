@@ -37,7 +37,7 @@ def get_state(username, password, database_name):
     state_id = 2
 
     # Query to search for the id
-    query = session.query(State).filter_by(id=tate_id).first()
+    query = session.query(State).filter_by(id=state_id).first()
 
     # checking if a result was return
     if query:
