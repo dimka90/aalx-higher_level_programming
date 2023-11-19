@@ -38,7 +38,7 @@ def get_state(username, password, database_name):
 
     # checking if there is any state in the table
     if state is None:
-        print("Nothine")
+        print("Nothing")
     else:
         print("{}: {}".format(state.id, state.name))
 
