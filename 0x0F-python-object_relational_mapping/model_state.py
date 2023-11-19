@@ -1,11 +1,8 @@
 #!/usr/bin/python3
 """
 Module: myscript.py
-
 This module defines a SQLAlchemy model class, State,
-for interacting with a MySQL database. It also creates
-the necessary database table based on the model.
-
+for interacting with a MySQL database.
 Usage:
     python myscript.py <username> <password> <database_name>
 
