@@ -20,10 +20,10 @@ Example:
 
 import sys
 from sqlalchemy import Column, Integer, String, create_engine, MetaData
-
+from sqlalchemy.ext.declarative import declarative_base
 # Creating the base model
-base_metadata = MetaData()
-Base = declarative_base(metadata=base_metadata)
+# base_metadata = MetaData()
+Base = declarative_base()
 
 
 class State(Base):
