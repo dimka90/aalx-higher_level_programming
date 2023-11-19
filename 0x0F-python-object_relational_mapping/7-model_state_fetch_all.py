@@ -20,8 +20,8 @@ def list_states(username, password, database_name):
     """
 
     # Create the database connection URL
-    DATABASE_URL = f"""mysql+mysqldb://{username}:{password}
-                    @localhost:3306/{database_name}"""
+    DATABASE_URL = 'mysql+mysqldb://{}:{}@localhost:3306/{}'.format(
+                    username, password, database_name)
 
     # Create the database engine
     engine = create_engine(DATABASE_URL, pool_pre_ping=True)
