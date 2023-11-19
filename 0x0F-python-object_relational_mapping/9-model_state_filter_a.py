@@ -33,14 +33,15 @@ def get_state(username, password, database_name):
     # Create a session
     session = Session(engine)
 
+    target_letter = 'a'
+
     # Query all State objects, sorted by id
-    state = session.query(State).order_by(State.id).first()
+    states = session.query(State).order_by(State.id).filter(
+              State.name.like(f'%{target_letter}')).all()
 
     # checking if there is any state in the table
-    if state is None:
-        print("Nothine")
-    else:
-        print("{}: {}".format(state.id, state.name))
+    for state in states:
+        print(f"{state.id}: {state.name}")
 
     # Close the session
     session.close()
