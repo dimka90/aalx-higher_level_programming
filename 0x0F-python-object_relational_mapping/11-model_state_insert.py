@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 """
-Script to list the first State objects
-from the database hbtn_0e_6_usa.
+Script to add an objects of type State
+to  the database hbtn_0e_6_usa.
 """
 
 import sys
@@ -12,7 +12,7 @@ from model_state import Base, State
 
 def get_state(username, password, database_name):
     """
-    Lists the first  State objects from the specified database.
+    Add a State object to the specified database.
 
     Args:
         username (str): MySQL username.
