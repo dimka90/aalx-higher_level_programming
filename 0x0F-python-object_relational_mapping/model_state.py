@@ -22,8 +22,8 @@ import sys
 from sqlalchemy import Column, Integer, String, create_engine, MetaData
 
 # Creating the base model
-# mymetadata = MetaData()
-Base = declarative_base()
+base_metadata = MetaData()
+Base = declarative_base(metadata=base_metadata)
 
 
 class State(Base):
