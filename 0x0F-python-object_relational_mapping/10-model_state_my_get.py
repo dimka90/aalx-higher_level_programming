@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """
-Script to list the first State objects
+Script to list the id of  State objects
 from the database hbtn_0e_6_usa.
 """
 
@@ -18,6 +18,7 @@ def get_state(username, password, database_name, state_name):
         username (str): MySQL username.
         password (str): MySQL password.
         database_name (str): Name of the MySQL database.
+        state_name(str): Name of state to search for
     """
 
     # Create the database connection URL
@@ -33,6 +34,7 @@ def get_state(username, password, database_name, state_name):
     # Create a session
     session = Session(engine)
 
+    # Name of state to search for
     target_state = state_name
 
     # Query all State objects, sorted by id
