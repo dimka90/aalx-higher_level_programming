@@ -37,7 +37,7 @@ def get_state(username, password, database_name):
 
     # Query all State objects, sorted by id
     states = session.query(State).order_by(State.id).filter(
-              State.name.like(f'%{target_letter}')).all()
+              State.name.like(f'%{target_letter}%')).all()
 
     # checking if there is any state in the table
     for state in states:
