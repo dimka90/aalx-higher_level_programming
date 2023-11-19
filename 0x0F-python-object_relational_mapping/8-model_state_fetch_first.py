@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """
-Script to list all State objects from the database hbtn_0e_6_usa.
+Script to list the first State objects
+from the database hbtn_0e_6_usa.
 """
 
 import sys
@@ -11,7 +12,7 @@ from model_state import Base, State
 
 def get_state(username, password, database_name):
     """
-    Lists all State objects from the specified database.
+    Lists the first  State objects from the specified database.
 
     Args:
         username (str): MySQL username.
