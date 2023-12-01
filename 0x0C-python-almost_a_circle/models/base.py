@@ -8,6 +8,9 @@ class Base:
     __nb_objects = 0
 
     def __init__(self, id=None):
+        """
+         a function that
+        """
         if id is not None:
             self.id = id
             Base.__nb_objects += 1
@@ -17,4 +20,7 @@ class Base:
 
     @classmethod
     def get_ob_count(cls):
+        """
+        a function that
+        """
         return cls.__nb_objects
