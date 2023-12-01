@@ -9,6 +9,7 @@ import sys
 from urllib.request import urlopen, Request
 from urllib.error import HTTPError
 
+
 def success_or_error_code(url):
     """
     a function at takes in a URL, sends a request to the URL and displays
