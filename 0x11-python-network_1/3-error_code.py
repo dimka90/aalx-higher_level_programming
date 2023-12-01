@@ -24,7 +24,8 @@ def success_or_error_code(url):
         with urlopen(req) as  response:
             print(response.read().decode('utf-8'))
     except HTTPError as e:
-        print("Error code: ",e.code)
+        # print("Error code: ",e.code)
+        print("Error code: {}".format(e.code))
 
 if __name__ == "__main__":
     try:
