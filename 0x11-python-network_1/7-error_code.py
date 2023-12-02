@@ -1,38 +1,20 @@
 #!/usr/bin/python3
 """
-Sends  request  to a server using a get request.
-
-Usage: python script.py <url>
+takes in a URL, sends a request to the URL and displays the
+body of the response using requests
 """
-
-import sys
 import requests
-
-
-def success_or_error_code(url):
-    """
-    a function at takes in a URL, sends a request to the URL and displays
-    the body of the response (decoded in utf-8).
-    Args:
-        url (str): The URL to which the request will be sent.
-
-    Returns:
-        None
-    """
-    response = requests.get(url)
-    try:
-        response.raise_for_status()
-        print(response.text)
-    except requests.exceptions.HTTPError as err:
-    # Print the HTTP error code
-        print(f"Error Code: {err.response.status_code}")
-
+from sys import argv
 
 
 if __name__ == "__main__":
-    try:
-        url = sys.argv[1]
-        success_or_error_code(url)
-    except ValueError:
-        print("Usage: python script.py <url>")
-
+    """
+    takes in a URL, sends a request to the URL and displays the
+    body of the response using requests
+    """
+    url = argv[1]
+    r = requests.get(url)
+    if r.status_code >= 400:
+        print("Error code: {}".format(r.status_code))
+    else:
+        print(r.text)
