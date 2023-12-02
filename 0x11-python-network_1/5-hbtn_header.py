@@ -8,6 +8,7 @@ Usage: python script.py <url>
 import sys
 import requests
 
+
 def success_or_error_code(url):
     """
     a function at takes in a URL, sends a request to the URL and displays
@@ -24,8 +25,8 @@ def success_or_error_code(url):
         response.raise_for_status()
         print(response.text)
     except requests.exceptions.HTTPError as err:
-    # Print the HTTP error code
-    print(f"Error Code: {err.response.status_code}")
+        print(f"Error Code: {err.response.status_code}")
+
 
 if __name__ == "__main__":
     try:
@@ -33,4 +34,3 @@ if __name__ == "__main__":
         success_or_error_code(url)
     except ValueError:
         print("Usage: python script.py <url>")
-
