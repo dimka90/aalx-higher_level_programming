@@ -22,7 +22,7 @@ def success_or_error_code(url):
     """
     req = Request(url)
     try:
-        with urlopen(req) as  response:
+        with urlopen(req) as response:
             html = response.read()
             html_str = html.decode('utf-8')
             print(html_str)
@@ -37,4 +37,3 @@ if __name__ == "__main__":
         success_or_error_code(url)
     except ValueError:
         print("Usage: python script.py <url>")
-
