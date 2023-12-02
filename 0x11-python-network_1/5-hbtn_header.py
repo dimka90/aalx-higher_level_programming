@@ -25,7 +25,7 @@ def success_or_error_code(url):
         # Retrieve the value of a specific header (e.g., 'Content-Type')
         content_type = response.headers.get('X-Request-Id')
         if content_type:
-            print(f'{content_type}')
+            print(content_type)
         else:
             print('Content-Type header not present in the response')
     else:
