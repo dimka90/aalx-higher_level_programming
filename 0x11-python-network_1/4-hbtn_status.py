@@ -16,6 +16,7 @@ Functions:
 
 import requests
 
+
 def request_url(url):
     """
     Sends a GET request to the specified URL using the requests library.
