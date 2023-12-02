@@ -20,12 +20,16 @@ def success_or_error_code(url):
         None
     """
     response = requests.get(url)
-
-    try:
-        response.raise_for_status()
-        print(response.text)
-    except requests.exceptions.HTTPError as err:
-        print(f"Error Code: {err.response.status_code}")
+    # Check if the request was successful (status code 200)
+    if response.status_code == 200:
+        # Retrieve the value of a specific header (e.g., 'Content-Type')
+        content_type = response.headers.get('X-Request-Id')
+        if content_type:
+            print(f'{content_type}')
+        else:
+            print('Content-Type header not present in the response')
+    else:
+        print(f"Error: {response.status_code}")
 
 
 if __name__ == "__main__":
