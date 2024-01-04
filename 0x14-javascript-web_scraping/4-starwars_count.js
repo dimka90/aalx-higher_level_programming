@@ -1,26 +1,24 @@
 #!/usr/bin/node
+
 const request = require('request');
+const starWarsUri = process.argv[2];
+let times = 0;
 
-const apiUrl = process.argv[2];
+request(starWarsUri, function (_err, _res, body) {
+  body = JSON.parse(body).results;
 
-// Make a GET request to the Star Wars API
-request(apiUrl, (error, response, body) => {
-  if (error) {
-    console.error('Error:', error);
-  } else {
-    try {
-      // Parse the JSON response
-      const filmsData = JSON.parse(body);
+  for (let i = 0; i < body.length; ++i) {
+    const characters = body[i].characters;
 
-      // Filter films where "Wedge Antilles" is present (character ID 18)
-      const filmsWithWedge = filmsData.results.filter((film) => {
-        return film.characters.includes('https://swapi-api.alx-tools.com/api/people/18/');
-      });
+    for (let j = 0; j < characters.length; ++j) {
+      const character = characters[j];
+      const characterId = character.split('/')[5];
 
-      // Print the number of movies where "Wedge Antilles" is present
-      console.log(filmsWithWedge.length);
-    } catch (parseError) {
-      console.error('Error parsing JSON:', parseError);
+      if (characterId === '18') {
+        times += 1;
+      }
     }
   }
+
+  console.log(times);
 });
